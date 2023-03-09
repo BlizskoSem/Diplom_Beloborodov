@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de38525386d04448ab492963d99f8e35" Name="Diagram1">
+        <EntityTypeShape EntityType="user24Model.Authorizations" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="user24Model.Fakts" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="user24Model.Newss" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="user24Model.Oznacomlenie" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="user24Model.StartLocation" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="user24Model.FK_StartLocation_Authorizations" />
+        <AssociationConnector Association="user24Model.FK_StartLocation_Fakts" />
+        <AssociationConnector Association="user24Model.FK_StartLocation_Newss" />
+        <AssociationConnector Association="user24Model.FK_StartLocation_Oznacomlenie" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

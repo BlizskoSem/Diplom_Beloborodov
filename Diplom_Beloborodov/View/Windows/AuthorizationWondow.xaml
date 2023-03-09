@@ -1,0 +1,35 @@
+﻿<Window x:Class="Diplom_Beloborodov.View.Windows.AuthorizationWondow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom_Beloborodov.View.Windows"
+        mc:Ignorable="d"
+        Title="AuthorizationWondow" Height="390" Width="800" WindowStartupLocation="CenterOwner">
+    <Grid Background="#55c5ff">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Name="T1" Text="Введите логин" HorizontalAlignment="Center" Width="280" 
+                       FontSize="24" Foreground="White"/>
+            <TextBox FontSize="20" HorizontalAlignment="Center" Width="264" x:Name="LoginTb" 
+                     BorderThickness="1"/>
+            <TextBlock Name="T2" Text="Введите пароль" FontSize="24" HorizontalAlignment="Center" 
+                       Width="280"  Foreground="White"/>
+            <PasswordBox FontSize="20" HorizontalAlignment="Center" Width="264"  x:Name="PassTb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Button x:Name="AutorizationApp" Grid.Row="2" HorizontalAlignment="Center"
+                    Content="Войти" FontSize="25" Style="{StaticResource AcceptButton}"
+                    Width="278" Click="AutorizationApp_Click" />
+            <Button x:Name="Zabil" Grid.Row="2" HorizontalAlignment="Center"
+            Content="Забыли пароль"  Height="60" FontSize="25" Style="{StaticResource AcceptButton}"
+            Width="278" Click="Zabil_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

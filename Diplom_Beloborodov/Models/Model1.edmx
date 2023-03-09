@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище user24Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authorizations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fakts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Newss">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oznacomlenie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StartLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oznakomlenie" Type="int" Nullable="false" />
+          <Property Name="Fakt" Type="int" Nullable="false" />
+          <Property Name="News" Type="int" Nullable="false" />
+          <Property Name="IdAuth" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_StartLocation_Authorizations">
+          <End Role="Authorizations" Type="Self.Authorizations" Multiplicity="1" />
+          <End Role="StartLocation" Type="Self.StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="IdAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Fakts">
+          <End Role="Fakts" Type="Self.Fakts" Multiplicity="1" />
+          <End Role="StartLocation" Type="Self.StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="Fakt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Newss">
+          <End Role="Newss" Type="Self.Newss" Multiplicity="1" />
+          <End Role="StartLocation" Type="Self.StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Newss">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="News" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Oznacomlenie">
+          <End Role="Oznacomlenie" Type="Self.Oznacomlenie" Multiplicity="1" />
+          <End Role="StartLocation" Type="Self.StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oznacomlenie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="Oznakomlenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище user24ModelContainer">
+          <EntitySet Name="Authorizations" EntityType="Self.Authorizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fakts" EntityType="Self.Fakts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Newss" EntityType="Self.Newss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oznacomlenie" EntityType="Self.Oznacomlenie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StartLocation" EntityType="Self.StartLocation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_StartLocation_Authorizations" Association="Self.FK_StartLocation_Authorizations">
+            <End Role="Authorizations" EntitySet="Authorizations" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Fakts" Association="Self.FK_StartLocation_Fakts">
+            <End Role="Fakts" EntitySet="Fakts" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Newss" Association="Self.FK_StartLocation_Newss">
+            <End Role="Newss" EntitySet="Newss" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Oznacomlenie" Association="Self.FK_StartLocation_Oznacomlenie">
+            <End Role="Oznacomlenie" EntitySet="Oznacomlenie" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="user24Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="user24Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authorizations" EntityType="user24Model.Authorizations" />
+          <EntitySet Name="Fakts" EntityType="user24Model.Fakts" />
+          <EntitySet Name="Newss" EntityType="user24Model.Newss" />
+          <EntitySet Name="Oznacomlenie" EntityType="user24Model.Oznacomlenie" />
+          <EntitySet Name="StartLocation" EntityType="user24Model.StartLocation" />
+          <AssociationSet Name="FK_StartLocation_Authorizations" Association="user24Model.FK_StartLocation_Authorizations">
+            <End Role="Authorizations" EntitySet="Authorizations" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Fakts" Association="user24Model.FK_StartLocation_Fakts">
+            <End Role="Fakts" EntitySet="Fakts" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Newss" Association="user24Model.FK_StartLocation_Newss">
+            <End Role="Newss" EntitySet="Newss" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StartLocation_Oznacomlenie" Association="user24Model.FK_StartLocation_Oznacomlenie">
+            <End Role="Oznacomlenie" EntitySet="Oznacomlenie" />
+            <End Role="StartLocation" EntitySet="StartLocation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Authorizations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StartLocation" Relationship="user24Model.FK_StartLocation_Authorizations" FromRole="Authorizations" ToRole="StartLocation" />
+        </EntityType>
+        <EntityType Name="Fakts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StartLocation" Relationship="user24Model.FK_StartLocation_Fakts" FromRole="Fakts" ToRole="StartLocation" />
+        </EntityType>
+        <EntityType Name="Newss">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StartLocation" Relationship="user24Model.FK_StartLocation_Newss" FromRole="Newss" ToRole="StartLocation" />
+        </EntityType>
+        <EntityType Name="Oznacomlenie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StartLocation" Relationship="user24Model.FK_StartLocation_Oznacomlenie" FromRole="Oznacomlenie" ToRole="StartLocation" />
+        </EntityType>
+        <EntityType Name="StartLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oznakomlenie" Type="Int32" Nullable="false" />
+          <Property Name="Fakt" Type="Int32" Nullable="false" />
+          <Property Name="News" Type="Int32" Nullable="false" />
+          <Property Name="IdAuth" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorizations" Relationship="user24Model.FK_StartLocation_Authorizations" FromRole="StartLocation" ToRole="Authorizations" />
+          <NavigationProperty Name="Fakts" Relationship="user24Model.FK_StartLocation_Fakts" FromRole="StartLocation" ToRole="Fakts" />
+          <NavigationProperty Name="Newss" Relationship="user24Model.FK_StartLocation_Newss" FromRole="StartLocation" ToRole="Newss" />
+          <NavigationProperty Name="Oznacomlenie" Relationship="user24Model.FK_StartLocation_Oznacomlenie" FromRole="StartLocation" ToRole="Oznacomlenie" />
+        </EntityType>
+        <Association Name="FK_StartLocation_Authorizations">
+          <End Type="user24Model.Authorizations" Role="Authorizations" Multiplicity="1" />
+          <End Type="user24Model.StartLocation" Role="StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="IdAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Fakts">
+          <End Type="user24Model.Fakts" Role="Fakts" Multiplicity="1" />
+          <End Type="user24Model.StartLocation" Role="StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="Fakt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Newss">
+          <End Type="user24Model.Newss" Role="Newss" Multiplicity="1" />
+          <End Type="user24Model.StartLocation" Role="StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Newss">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="News" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StartLocation_Oznacomlenie">
+          <End Type="user24Model.Oznacomlenie" Role="Oznacomlenie" Multiplicity="1" />
+          <End Type="user24Model.StartLocation" Role="StartLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oznacomlenie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StartLocation">
+              <PropertyRef Name="Oznakomlenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище user24ModelContainer" CdmEntityContainer="user24Entities">
+          <EntitySetMapping Name="Authorizations">
+            <EntityTypeMapping TypeName="user24Model.Authorizations">
+              <MappingFragment StoreEntitySet="Authorizations">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fakts">
+            <EntityTypeMapping TypeName="user24Model.Fakts">
+              <MappingFragment StoreEntitySet="Fakts">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Newss">
+            <EntityTypeMapping TypeName="user24Model.Newss">
+              <MappingFragment StoreEntitySet="Newss">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oznacomlenie">
+            <EntityTypeMapping TypeName="user24Model.Oznacomlenie">
+              <MappingFragment StoreEntitySet="Oznacomlenie">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StartLocation">
+            <EntityTypeMapping TypeName="user24Model.StartLocation">
+              <MappingFragment StoreEntitySet="StartLocation">
+                <ScalarProperty Name="IdAuth" ColumnName="IdAuth" />
+                <ScalarProperty Name="News" ColumnName="News" />
+                <ScalarProperty Name="Fakt" ColumnName="Fakt" />
+                <ScalarProperty Name="Oznakomlenie" ColumnName="Oznakomlenie" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

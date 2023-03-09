@@ -1,0 +1,41 @@
+﻿<Window x:Class="Diplom_Beloborodov.View.Windows.SmenaPass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom_Beloborodov.View.Windows"
+        mc:Ignorable="d"
+        Title="SmenaPass" Height="390" Width="800" WindowStartupLocation="CenterOwner">
+    <Grid Background="#55c5ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="320" HorizontalAlignment="Center">
+            <TextBlock Name="T1" Text="Введите старый пароль" HorizontalAlignment="Left" 
+                       FontSize="24" Foreground="White"/>
+            <TextBox FontSize="20" HorizontalAlignment="Left" Width="264" x:Name="LoginTb" 
+                     BorderThickness="1"/>
+            
+            <TextBlock Name="T2" Text="Введите новый пароль" FontSize="24" HorizontalAlignment="Left" 
+                       Foreground="White"/>
+            <PasswordBox FontSize="20" HorizontalAlignment="Left" Width="264"  x:Name="PassTb"/>
+            
+            <TextBlock Name="T3" Text="Подтвердите новый пароль" FontSize="24" HorizontalAlignment="Left" 
+                       Foreground="White"/>
+            <PasswordBox FontSize="20" HorizontalAlignment="Left" Width="264"  x:Name="PassTb2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock x:Name="q1" Text="" FontSize="20" HorizontalAlignment="Center" Foreground="#FF3F783F"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="20">
+            <Button x:Name="AutorizationApp" Grid.Row="2" HorizontalAlignment="Center"
+                    Content="Изменить пароль" FontSize="25" Style="{StaticResource AcceptButton}"
+                    Width="278" Click="AutorizationApp_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

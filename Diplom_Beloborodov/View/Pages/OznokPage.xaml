@@ -1,0 +1,69 @@
+﻿<Page x:Class="Diplom_Beloborodov.View.Pages.OznokPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom_Beloborodov.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="464" d:DesignWidth="1400"
+      Title="OznokPage">
+
+    <Grid>
+        <TabControl Background="#55c5ff">
+            <TabItem Header="Как устроена машина">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    
+                    <StackPanel>
+                        <TextBlock FontSize="24" x:Name="Text1" Text="Двигатель С 2014 года в болидах королевских автогонок установлены шестицилиндровые турбомоторы рабочим объемом 1,6 л (да, как на твоём солярисе)), с ограничением оборотов до 15000 в минуту. Также на машинах есть система рекуперации энергии, которая утилизирует не только кинетическую энергию во время торможения, но и энергию выхлопных газов. " TextWrapping="Wrap" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Как проходит гран при">
+                Пока никак
+            </TabItem>
+            <TabItem Header="Пит стоп">
+                Кто участвует
+            </TabItem>
+            <TabItem Header="Правила">
+                Правил в формуле 1 очень много. Вот основные из них
+            </TabItem>
+            <TabItem Header="Трасса">
+                Кто участвует
+            </TabItem>
+
+            
+
+            <TabItem Header="Кто участвует в формуле 1">
+                Кто участвует
+            </TabItem>
+
+            <TabItem Header="Типы шины">
+                На данный момент существует 5 типов шин: самые твёрдый C1 … и далее к самому мягкому… C2, C3, C4, C5 – самый мягкий
+            </TabItem>
+
+            <TabItem Header="Машина безопастности">
+                Кто участвует
+            </TabItem>
+
+            <TabItem Header="Флаги">
+                Кто участвует
+            </TabItem>
+
+            <TabItem Header="Очки">
+                Кто участвует
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Page>
