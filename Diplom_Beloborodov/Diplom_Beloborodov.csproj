@@ -220,7 +220,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="View\Windows\48.jpg" />
+    <Resource Include="View\Images\141637.jpg" />
+    <Resource Include="View\Images\v8-renault-f1.jpg" />
+    <Resource Include="View\Images\58426.jpg" />
+    <Resource Include="View\Images\c2f6e5b8cc56e1789ea0d8ddb73537dc.jpg" />
+    <Resource Include="View\Images\silverstone-aero.jpg" />
     <Resource Include="View\Images\48.jpg" />
     <Resource Include="View\Images\Article_167127_860_575.jpg" />
     <Resource Include="View\Images\154632.jpg" />

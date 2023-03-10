@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom_Beloborodov.View.Windows"
         mc:Ignorable="d"
-        Title="Test1" Height="650" Width="800">
+        Title="Test1" Height="650" Width="800"   WindowStartupLocation="CenterOwner"  >
     <Grid Background="#55c5ff">
 
         <Grid.RowDefinitions>
@@ -21,24 +21,85 @@
             <ColumnDefinition Width="61*"/>
 
         </Grid.ColumnDefinitions>
-        <Label Content="               1 Что это за трасса?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="239" Height="27"/>
-        <Label Content=" 2 В какой странне находиться эта трасса?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="254" Height="27" Grid.Column="1"/>
-        <Label Content="  3 Сколько поворотов на этой трассе?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="254" Grid.Column="2" Height="27"/>
+        <Label Foreground="White" Content="               1 Что это за трасса?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="239" Height="27"/>
+        <Label Foreground="White" Content=" 2 В какой странне находиться эта трасса?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="254" Height="27" Grid.Column="1"/>
+        <Label Foreground="White" Content="  3 Сколько поворотов на этой трассе?" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="254" Grid.Column="2" Height="27"/>
 
 
-        <Image Source="/View/Images/rue8540fae576.jpg" Grid.Column="2" Margin="19,51,28,77" />
-        <Image Source="/View/Images/monza-italy-f1-track.jpg" Margin="10,51,10,77" Grid.Column="1" />
-        <Image Source="/View/Images/f1-monaco-gp-2018-daniel-ricci.jpg" Margin="0,37,20,81" />
-        <RadioButton Content="1 Монако" HorizontalAlignment="Left" Margin="25,198,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="82"/>
-        <RadioButton Content="2 Шпильберг" HorizontalAlignment="Left" Margin="133,198,0,0" VerticalAlignment="Top" Height="16" Width="106" Checked="RadioButton_Checked_1"/>
-        <RadioButton Content="3 Сильверстоун" HorizontalAlignment="Left" Margin="65,228,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="125"/>
-        <RadioButton Content="Сша" HorizontalAlignment="Left" Margin="30,201,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="1"/>
-        <RadioButton Content="Канада" HorizontalAlignment="Left" Margin="153,201,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="1"/>
-        <RadioButton Content="Италия" HorizontalAlignment="Left" Margin="92,231,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="1"/>
-        <RadioButton Content="21" HorizontalAlignment="Left" Margin="47,204,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="2"/>
-        <RadioButton Content="19" HorizontalAlignment="Left" Margin="153,204,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="2"/>
-        <RadioButton Content="16" HorizontalAlignment="Left" Margin="100,228,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="2"/>
-        <Button Content="Завершить тест" Grid.Column="1" HorizontalAlignment="Left" Margin="39,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="195" Height="50" Click="Button_Click" IsDefault="True"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="1" Source="/View/Images/f1-monaco-gp-2018-daniel-ricci.jpg"/>
+
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+                <RadioButton Foreground="White" Content="1 Монако" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="82"/>
+                <RadioButton Foreground="White" Content="2 Шпильберг" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="106" Checked="RadioButton_Checked_1"/>
+                <RadioButton Foreground="White" Content="3 Сильверстоун" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="125"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="1" Source="/View/Images/monza-italy-f1-track.jpg" />
+
+            <StackPanel Grid.Row="2"  HorizontalAlignment="Center">
+
+                <RadioButton Foreground="White" Content="1 Бельгия" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="85" Grid.Column="1"/>
+                <RadioButton Foreground="White" Content="2 Канада" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="76" Grid.Column="1" RenderTransformOrigin="0.61,0.625"/>
+                <RadioButton Foreground="White" Content="3 Сингапур" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Column="1"/>
+            </StackPanel>
+
+        </Grid>
+
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image Source="/View/Images/rue8540fae576.jpg" Grid.Row="1"   />
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+                <RadioButton Foreground="White" Content="21" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="45" Grid.Column="2" RenderTransformOrigin="0.763,0.542"/>
+                <RadioButton Foreground="White" Content="19" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="44" Grid.Column="2" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton Foreground="White" Content="16" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="44" Grid.Column="2"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Button Content="Завершить тест" Grid.Column="1" HorizontalAlignment="Left" Margin="39,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="195" Height="50" Click="Button_Click" IsDefault="True" Background="White"/>
+        <Image Source="/View/Images/c2f6e5b8cc56e1789ea0d8ddb73537dc.jpg" Margin="25,45,37,84" Grid.Row="1" />
+        <Image Source="/View/Images/silverstone-aero.jpg" Grid.Column="1" Margin="30,45,25,73" Grid.Row="1" />
+        <Label  Foreground="White"  Content="               4 Что это за трасса?" HorizontalAlignment="Left" Margin="5,13,0,0" VerticalAlignment="Top" Width="239" Height="27" Grid.Row="1"/>
+        <Label Foreground="White" Content="               5 Что это за трасса?" HorizontalAlignment="Left" Margin="15,18,0,0" VerticalAlignment="Top" Width="239" Height="27" Grid.Column="1" Grid.Row="1"/>
+        <Image Source="/View/Images/58426.jpg" Grid.Column="2" Margin="47,47,30,84" Grid.Row="1" />
+        <Label Foreground="White" Content="               5 Что это за кадр?" HorizontalAlignment="Left" Margin="15,13,0,0" VerticalAlignment="Top" Width="239" Height="27" RenderTransformOrigin="1.803,6.704" Grid.Column="2" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="3 Сильверстоун" HorizontalAlignment="Left" Margin="114,188,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="125" Grid.Column="1" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="1 Стена чемипонов" HorizontalAlignment="Left" Margin="19,188,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="142" Grid.Column="2" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="2 Мексика" HorizontalAlignment="Left" Margin="166,191,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="90" Grid.Column="2" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="2 Шпильберг" HorizontalAlignment="Left" Margin="3,188,0,0" VerticalAlignment="Top" Height="16" Width="106" Checked="RadioButton_Checked_1" Grid.Column="1" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="1 Альбертпарк" HorizontalAlignment="Left" Margin="60,221,0,0" VerticalAlignment="Top" Height="16" Width="106" Checked="RadioButton_Checked_1" Grid.Column="1" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="3 Поворот шумахера" HorizontalAlignment="Left" Margin="69,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="154" Grid.Column="2" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="1 Австралия" HorizontalAlignment="Left" Margin="25,188,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="99" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="2 Венгрия" HorizontalAlignment="Left" Margin="146,188,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="81" RenderTransformOrigin="0.61,0.625" Grid.Row="1"/>
+        <RadioButton Foreground="White" Content="3 Италия" HorizontalAlignment="Left" Margin="79,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="16" Width="111" Grid.Row="1"/>
+        <Button Content="Вернуться назад" Grid.Column="2" HorizontalAlignment="Left" Margin="39,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="195" Height="50" Click="Button_Click" IsDefault="True" Background="White"/>
+        <Button Content="Выбрать другой тест" HorizontalAlignment="Left" Margin="32,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="195" Height="50" Click="Button_Click" IsDefault="True" Background="White"/>
+
+
+
+
+
+
 
 
     </Grid>

@@ -25,9 +25,9 @@
         <Button Margin="25,20,35,18" x:Name="Oznakomlenie" Content="Ознакомление" FontFamily="Times New Roman" 
             FontStyle="Italic" FontWeight="Bold" FontSize="20" Style="{StaticResource ResourceKey=AcceptButton}" 
             Height="84" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Click="Oznakomlenie_Click"/>
-        <Button Margin="52,20,52,18" x:Name="Oznakomlenie_Copy" Content="Интересные факты" FontFamily="Times New Roman" 
+        <Button Margin="52,21,33,19" x:Name="Oznakomlenie_Copy" Content="Интересные факты" FontFamily="Times New Roman" 
             FontStyle="Italic" FontWeight="Bold" FontSize="20" Style="{StaticResource ResourceKey=AcceptButton}" 
-            Height="84" HorizontalAlignment="Center" VerticalAlignment="Center" Width="258" Grid.Column="1" Click="Oznakomlenie_Copy_Click"/>
+            Height="84" HorizontalAlignment="Center" VerticalAlignment="Center" Width="277" Grid.Column="1" Click="Oznakomlenie_Copy_Click"/>
         <Button Margin="52,20,53,18" x:Name="Oznakomlenie_Copy1" Content="Новости" FontFamily="Times New Roman" 
             FontStyle="Italic" FontWeight="Bold" FontSize="20" Style="{StaticResource ResourceKey=AcceptButton}" 
             Height="84" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Grid.Column="2" IsCancel="True" Click="Oznakomlenie_Copy1_Click">
@@ -43,7 +43,7 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="25,11,5,19"  >
             <Frame x:Name="frame"/>
         </StackPanel>
-        
+
 
     </Grid>
 </Window>

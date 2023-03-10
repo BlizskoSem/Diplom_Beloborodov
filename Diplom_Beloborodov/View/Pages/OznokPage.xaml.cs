@@ -30,5 +30,10 @@ namespace Diplom_Beloborodov.View.Pages
         {
 
         }
+
+        private void TabControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

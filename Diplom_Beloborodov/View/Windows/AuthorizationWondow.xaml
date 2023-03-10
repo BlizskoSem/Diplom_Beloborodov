@@ -24,9 +24,9 @@
             <PasswordBox FontSize="20" HorizontalAlignment="Center" Width="264"  x:Name="PassTb"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button x:Name="AutorizationApp" Grid.Row="2" HorizontalAlignment="Center"
+            <Button x:Name="AutorizationApp" HorizontalAlignment="Center"
                     Content="Войти" FontSize="25" Style="{StaticResource AcceptButton}"
-                    Width="278" Click="AutorizationApp_Click" />
+                    Width="278" Click="AutorizationApp_Click" Margin="257,0" />
             <Button x:Name="Zabil" Grid.Row="2" HorizontalAlignment="Center"
             Content="Забыли пароль"  Height="60" FontSize="25" Style="{StaticResource AcceptButton}"
             Width="278" Click="Zabil_Click"/>

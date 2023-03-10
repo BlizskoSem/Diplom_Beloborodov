@@ -31,6 +31,8 @@ namespace Diplom_Beloborodov.View.Windows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Вы набарли 20 баллов, неплохо, но можно и лучше");
+            Close();
 
         }
 

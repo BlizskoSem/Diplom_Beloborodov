@@ -18,11 +18,11 @@
                        FontSize="24" Foreground="White"/>
             <TextBox FontSize="20" HorizontalAlignment="Left" Width="264" x:Name="LoginTb" 
                      BorderThickness="1"/>
-            
+
             <TextBlock Name="T2" Text="Введите новый пароль" FontSize="24" HorizontalAlignment="Left" 
                        Foreground="White"/>
             <PasswordBox FontSize="20" HorizontalAlignment="Left" Width="264"  x:Name="PassTb"/>
-            
+
             <TextBlock Name="T3" Text="Подтвердите новый пароль" FontSize="24" HorizontalAlignment="Left" 
                        Foreground="White"/>
             <PasswordBox FontSize="20" HorizontalAlignment="Left" Width="264"  x:Name="PassTb2"/>
@@ -32,10 +32,10 @@
             <TextBlock x:Name="q1" Text="" FontSize="20" HorizontalAlignment="Center" Foreground="#FF3F783F"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Margin="20">
-            <Button x:Name="AutorizationApp" Grid.Row="2" HorizontalAlignment="Center"
+        <StackPanel Grid.Row="1" Margin="0,10,40,57" Grid.RowSpan="2">
+            <Button x:Name="AutorizationApp" HorizontalAlignment="Center"
                     Content="Изменить пароль" FontSize="25" Style="{StaticResource AcceptButton}"
-                    Width="278" Click="AutorizationApp_Click" />
+                    Width="278" Click="AutorizationApp_Click" Margin="237,0" />
         </StackPanel>
     </Grid>
 </Window>
